@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
 import Button from "../../../components/UI/Button/Button";
 import classes from './ContactData.module.css'
 import axios from "../../../axois-order";
@@ -212,4 +213,11 @@ class ContactData extends Component {
 
 }
 
-export default withRouter(ContactData);
+const mapStateToProps = state => {
+    return {
+        ingredients: state.ingredients,
+        price: state.totalPrice
+    }
+}
+
+export default connect(mapStateToProps)(withRouter(ContactData));

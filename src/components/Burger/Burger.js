@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './Burger.module.css'
 import BurgerIngredient from "./BurgerIngredient/BurgerIngredient";
 
-const burger = (props) => {
+const Burger = (props) => {
 
     let transformedIngredients = Object.keys(props.ingredients).map(igKey => {
         return [...Array(props.ingredients[igKey])].map((_,i)=> {
@@ -12,7 +12,7 @@ const burger = (props) => {
         return arr.concat(el)
     }, []);
 
-    if (transformedIngredients.length == 0){
+    if (transformedIngredients.length === 0){
         transformedIngredients = <p>Please Start adding Ingredients!!</p>
     }
 
@@ -25,4 +25,4 @@ const burger = (props) => {
     );
 }
 
-export default burger;
+export default Burger;
